@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-303.271,-392.294)">
+        <g id="badge" transform="matrix(1.02079,0,0,1.02076,292.232,381.256)">
+            <rect x="10.815" y="10.814" width="78.371" height="78.373" style="fill:none;"/>
+            <g transform="matrix(0.683173,0,0,0.683189,15.8413,-634.807)">
+                <path d="M50,959.35C33.365,959.35 19.906,972.784 19.906,989.412C19.906,1006.04 33.365,1019.51 50,1019.51C66.635,1019.51 80.094,1006.04 80.094,989.412C80.094,972.783 66.635,959.35 50,959.35ZM50,972.506L55.938,983.506L67.781,985.225L58.469,993.662L61,1006.35L50,1000.44L39,1006.35L41.531,993.662L32.219,985.225L44.063,983.506L50,972.506L50,972.506ZM31.344,1015.51L31.344,1045.38L50,1033.98L68.656,1045.39L68.656,1015.51C63.394,1019.28 56.963,1021.51 50,1021.51C43.036,1021.51 36.606,1019.28 31.344,1015.51L31.344,1015.51Z" style="fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+</svg>

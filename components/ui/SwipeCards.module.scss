@@ -1,0 +1,39 @@
+.swipeview {
+    overflow: hidden;
+    width: 100vw;
+    height: 56vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px;
+    p {
+        font-size: 10px;
+        line-height: 1em;
+        margin-top: 0;
+    }
+}
+
+.row {
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px 2px black;
+    img {
+        background: black;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

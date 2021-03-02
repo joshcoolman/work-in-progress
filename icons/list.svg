@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-546.489,-92.0725)">
+        <g id="Hamburger" transform="matrix(1.02079,0,0,1.02076,535.45,81.0344)">
+            <rect x="10.815" y="10.814" width="78.371" height="78.373" style="fill:none;"/>
+            <g transform="matrix(0.979636,0,0,0.979659,-524.546,-79.386)">
+                <path d="M605.935,145.025L567.044,145.025L567.044,162.025L605.935,162.025L605.935,145.025ZM605.935,121.512L567.044,121.512L567.044,142.512L605.935,142.512L605.935,121.512ZM605.935,102L567.044,102L567.044,119L605.935,119L605.935,102Z"/>
+            </g>
+        </g>
+    </g>
+</svg>
