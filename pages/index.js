@@ -51,7 +51,7 @@ export default function Render() {
           </a>
           </p>
 
-          <p>By way of introduction I have made the code for <a href="https://github.com/joshcoolman/nextlify">this site is available on Github.</a> Have a look and and get in touch if I can help in any way.</p></div>
+          <p>By way of introduction I have made the code for <a href="https://github.com/joshcoolman/work-in-progress">this site is available on Github.</a> Have a look and and get in touch if I can help in any way.</p></div>
 
       </PageBlock>
 
