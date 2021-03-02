@@ -1,10 +1,14 @@
 import { motion } from "framer-motion"
 import { useRouter } from 'next/router'
 
-const Tappable = ({ style, href, ...props }) => {
+const Tappable = ({ style, href, onClick, ...props }) => {
     const router = useRouter();
 
     const handleClick = () => {
+        if (onClick) {
+            onClick();
+            return false;
+        }
         if (href) {
             router.push(href);
         }

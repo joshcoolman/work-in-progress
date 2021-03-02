@@ -40,7 +40,7 @@ export default function Render() {
 
       <PageBlock dark={isDark}>
         <Block nc c m={[0, 0, 10, 0]}>
-          <ProfileImage size={170} src="https://firebasestorage.googleapis.com/v0/b/images-aae96.appspot.com/o/Josh2.jpg?alt=media&token=0886e88d-ee51-47ce-a93d-0533fe053d58" />
+          <ProfileImage size={170} src="https://firebasestorage.googleapis.com/v0/b/images-aae96.appspot.com/o/josh-coolman-3.png?alt=media&token=46b7d686-8e37-437c-bfa9-f36ef2055466" />
         </Block>
 
         <div>
