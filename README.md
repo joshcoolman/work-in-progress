@@ -1,6 +1,6 @@
-# **Nextlify - A Work In Progress...**  
+# **Work In Progress...**  
 
-**A Next JS component playground for free and for fun.**  
+**A Component Playground (Next/React).**  
 By Josh Coolman, Front End Developer. Portland OR.
 
  This is a little kitchen sink app built with NextJS. It's where I experiment with React. You'll find rough-cuts, false-starts, hair-brained ideas, silly widgets some eye candy. It's just a way for me to share work samples with some folks. So... no docs, no versions, no tests, no support :dizzy_face: but feel free to use and abuse the code! :rocket:
