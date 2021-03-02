@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { IconMap } from "../icons"
 import ThemeContext from '../helpers/ThemeContext'
 import RatingExample from "../components/widget/Rating"
@@ -13,11 +13,17 @@ import Tappable from "../components/animated/Tappable"
 
 export default function Render() {
   const mode = useContext(ThemeContext)
-  const isDark = mode.theme === 'dark'
+  const [isDark, setIsDark] = useState(true);
 
   const _bg = isDark ? "#1B263E" : "#eee"
   const _txt = isDark ? '#b8c1d4' : "#1B263E";
   const _hdr = isDark ? 'tomato' : "green";
+
+  useEffect(() => {
+    if (mode && mode.theme) {
+      setIsDark(mode.theme === 'dark' ? true : false);
+    }
+  }, [mode])
 
 
 
