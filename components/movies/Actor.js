@@ -4,6 +4,7 @@ import ProfileImage from "../ui/ProfileImage"
 import FadeInUp from "../animated/FadeInUp";
 import MoviePosters from "./Posters"
 import { getImageUrl } from "../../helpers/tmdb";
+import { _var } from "../../helpers/colors"
 
 
 const ActorProfile = ({ data, onClick }) => {
@@ -13,10 +14,12 @@ const ActorProfile = ({ data, onClick }) => {
     }
     return (
         <FadeInUp>
-            <Block fcc nc nm c >
-                <ProfileImage size="50%" src={getImageUrl(path)} />
-                <h1>{name}</h1>
-                <Blurb limit={50} text={bio} />
+            <Block p={0}>
+                <Block np c m={[0, 0, 10, 0]} >
+                    <ProfileImage size="50%" src={getImageUrl(path)} />
+                    <h1 style={{ marginTop: 10 }}>{name}</h1>
+                </Block>
+                <Blurb limit={50} text={bio} color={_var('--body-bg')} align="justify" />
                 <MoviePosters data={credits} onClick={(id) => { handleClick(id) }} />
             </Block>
         </FadeInUp>

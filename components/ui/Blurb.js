@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { _alpha } from "../../helpers/colors"
 
 const Blurb = props => {
-    const { text, color = 'black', limit = 27 } = props;
+    const { text, color = 'black', limit = 27, align } = props;
 
     if (!text) return null;
 
@@ -53,7 +53,10 @@ const Blurb = props => {
         },
         text: {
             margin: 0,
-            lineHeight: 1.3
+            color: 'var(--body-text)',
+            fontSize: 'var(--md)',
+            lineHeight: 'var(--xl)',
+            textAlign: align ? align : 'left',
         }
     }
     return (

@@ -57,7 +57,7 @@ export default function Cast({ data = [], max = 15, ...props }) {
                     );
                 })}
             </GridResponsive >
-            <button center onClick={handleClick}>{castLimit === limit ? "More" : "Less"}</button>
+            <button onClick={handleClick}>{castLimit === limit ? "More" : "Less"}</button>
             <style jsx>{`
                 h1{
                     font-size:1.2rem;

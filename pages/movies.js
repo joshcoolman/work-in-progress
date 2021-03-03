@@ -11,6 +11,7 @@ import Actor from "../components/movies/Actor";
 import Details from "../components/movies/Details"
 import Posters from "../components/movies/Posters";
 import useHistory from "../hooks/useHistory"
+import Block from "../components/ui/Block"
 
 export default function Render({ data: { results: items = [], ...rest } }) {
     const [movie, setMovie] = useState(() => { })
@@ -19,6 +20,11 @@ export default function Render({ data: { results: items = [], ...rest } }) {
     const [historyCurrent, historyAdd] = useHistory("id");
 
     useEffect(() => {
+        toTop();
+    }, [])
+
+    useEffect(() => {
+
         if (historyCurrent) {
             let { type } = historyCurrent;
             if (type === 'movie') {
@@ -92,6 +98,9 @@ export default function Render({ data: { results: items = [], ...rest } }) {
 
     return (
         <div>
+            <Block c>
+                <h1 style={{ color: 'var(--body-hdr)' }}>Movies App</h1>
+            </Block>
             <div style={{ ...loaderStyle, opacity: loading ? 1 : 0 }}>
                 <Loading />
             </div>

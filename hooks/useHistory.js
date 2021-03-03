@@ -10,8 +10,10 @@ const useHistory = (key = "id", path = "movies") => {
         router.beforePopState(({ url, as, options }) => {
             if (history.current.length) {
                 removeItem();
+                return false
             }
-            return false
+            console.log(url, as, options, history)
+            router.push("/")
         })
     }, [router])
 

@@ -17,6 +17,8 @@
     --body-link: var(--cyan-200);
     --body-text: var(--coolGray-400);
     --body-bg: var(--coolGray-900);
+    --body-hdr: tomato;
+    --body-hl: lime;
     --block-text: var(--coolGray-300);
     --block-bg: var(--coolGray-800);
     --button-text: var(--cyan-200);
@@ -28,6 +30,8 @@
     --body-link: var(--blue-600);
     --body-text: var(--coolGray-800);
     --body-bg: var(--coolGray-300);
+    --body-hdr: rgb(0, 86, 92);
+    --body-hl: rgb(49, 5, 90);
     --block-text: var(--coolGray-700);
     --block-bg: var(--coolGray-100);
     --button-text: var(--cyan-50);
