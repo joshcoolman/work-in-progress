@@ -1,6 +1,10 @@
 const Block = (props) => {
     let {
         m = 10,     // margin
+        mb,         // margin bottom
+        mt,         // margin top
+        ml,         // margin left
+        mr,         // margin right
         p = 10,     // padding
         rc = 5,     // rounded corners
         bg,         // background color
@@ -63,6 +67,17 @@ const Block = (props) => {
         m.map((val, i) => {
             marginProps += `${styleProps[i]}:${val}px;`;
         })
+    }
+
+    if (mb) {
+        marginProps += `
+            margin-bottom:${mb}px;
+        `;
+    }
+    if (mt) {
+        marginProps += `
+            margin-top:${mt}px;
+        `;
     }
 
     let paddingProps = `

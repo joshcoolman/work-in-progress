@@ -1,11 +1,9 @@
-import { useState, useEffect, useLayoutEffect } from "react";
-import '@styles/globals.css'
+import { useState, useEffect } from "react";
+import '@styles/globals.scss'
 import '@styles/materialColors.css'
 import ThemeContext from "../helpers/ThemeContext"
 import Block from "../components/ui/Block"
 import useBreakpoints from "../hooks/useBreakpoints"
-
-
 
 const Responsive = () => {
   const breakPoint = useBreakpoints();
@@ -14,7 +12,6 @@ const Responsive = () => {
   }, [breakPoint]);
   return null
 }
-
 
 function Application({ Component, pageProps }) {
   const [theme, setTheme] = useState('dark')

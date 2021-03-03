@@ -36,7 +36,7 @@ export default function Render() {
 
 
   return (
-    <div>
+    <div className="mt-50">
 
       <PageBlock dark={isDark}>
         <Block nc c m={[0, 0, 10, 0]}>
