@@ -10,6 +10,10 @@ import GalleryUnsplash from "../components/widget/Unsplash"
 import ProfileImage from "../components/ui/ProfileImage"
 import Tappable from "../components/animated/Tappable"
 
+const bioPic = 'https://firebasestorage.googleapis.com/v0/b/images-aae96.appspot.com/o/jc_profile.jpg?alt=media&token=aab14065-dc7a-4624-80b9-361b8d2c6224';
+const linkedIn = 'https://www.linkedin.com/in/joshuacoolman/';
+const github = 'https://github.com/joshcoolman/work-in-progress';
+
 
 export default function Render() {
   const { theme, viewSize } = useContext(ThemeContext)
@@ -19,6 +23,7 @@ export default function Render() {
   const _bg = isDark ? "#1B263E" : "#eee"
   const _txt = isDark ? '#b8c1d4' : "#1B263E";
   const _hdr = isDark ? 'tomato' : "green";
+
 
   useEffect(() => {
     if (theme) {
@@ -40,22 +45,22 @@ export default function Render() {
 
 
   return (
-    <div className="mt-50">
+    <div>
 
       <PageBlock dark={isDark}>
         <Block nc c m={[0, 0, 10, 0]}>
-          <ProfileImage size={170} src="https://firebasestorage.googleapis.com/v0/b/images-aae96.appspot.com/o/josh-coolman-3.png?alt=media&token=46b7d686-8e37-437c-bfa9-f36ef2055466" />
+          <ProfileImage size={170} src={bioPic} />
         </Block>
 
         <div>
           <p>
             Hello, I'm Josh. I'm a front-end developer in Portland OR. I'm seeking full-time remote work (on-site locally). If you need asisstance with visual design and javascript programming I can help.
-          <a href="https://www.linkedin.com/in/joshuacoolman/">
+          <a href={linkedIn}>
               You can reach me via LinkedIn.
           </a>
           </p>
 
-          <p>By way of introduction I have made the code for <a href="https://github.com/joshcoolman/work-in-progress">this site is available on Github.</a> Have a look and and get in touch if I can help in any way.</p></div>
+          <p>By way of introduction I have made the code for <a href={github}>this site is available on Github.</a> Have a look and and get in touch if I can help in any way.</p></div>
 
       </PageBlock>
 
