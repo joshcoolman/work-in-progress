@@ -29,7 +29,7 @@ UNSPLASH=( ... your api key)
 ```
 
 ### Run Locally:
-With your API keys in place (above) you can now run the following commands in terminal from the root of the projec to run this app locally:
+With your API keys in place (above) you can now run the following commands in terminal from the root of the project:
 ```
 npm install
 npm run dev
