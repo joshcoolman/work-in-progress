@@ -101,13 +101,23 @@ const Block = (props) => {
 
     let flexProps = ``;
     if (c) {
-        flexProps += `
+        flexProps = `
         display:flex;
         justify-content:center;
         align-items:center;
         flex-direction: column;
         text-align:center;`
     }
+
+    if (c && c === 'v') {
+        flexProps = `
+        display:flex;
+        justify-content:flex-start;
+        align-items:center;
+        flex-direction: column;
+        text-align:left;`
+    }
+
 
 
 

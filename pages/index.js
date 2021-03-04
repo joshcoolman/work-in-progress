@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react"
-import { IconMap } from "../icons"
+import { IconMap, Icon } from "../icons"
 import ThemeContext from '../helpers/ThemeContext'
 import RatingExample from "../components/widget/Rating"
 import Block from "../components/ui/Block"
@@ -12,18 +12,22 @@ import Tappable from "../components/animated/Tappable"
 
 
 export default function Render() {
-  const mode = useContext(ThemeContext)
+  const { theme, viewSize } = useContext(ThemeContext)
   const [isDark, setIsDark] = useState(true);
+  const [vsmall, setVsmall] = useState(true);
 
   const _bg = isDark ? "#1B263E" : "#eee"
   const _txt = isDark ? '#b8c1d4' : "#1B263E";
   const _hdr = isDark ? 'tomato' : "green";
 
   useEffect(() => {
-    if (mode && mode.theme) {
-      setIsDark(mode.theme === 'dark' ? true : false);
+    if (theme) {
+      setIsDark(theme === 'dark' ? true : false);
     }
-  }, [mode])
+    if (viewSize) {
+      setVsmall(viewSize === 'sm')
+    }
+  }, [theme, viewSize])
 
 
 
@@ -57,12 +61,15 @@ export default function Render() {
 
 
       <Tappable href="/movies">
-        <PageBlock>
-          <Block grid='35% 1fr' gap={20} np nm >
-            <img src="/movies.jpg" alt="" />
-            <div>
+        <PageBlock dark={isDark}>
+          <Block grid={`${vsmall ? '25%' : '35%'} 1fr auto`} gap={10} nc np nm c='v' style={{ minHeight: vsmall ? 120 : 200 }} >
+            <ImageBlock src="./movies.jpg" rc={5} />
+            <div style={{ paddingLeft: 10 }}>
               <h2>TMDB Movie App</h2>
               <p>A movie explorer app composed of components listed below using The Movie Database API</p>
+            </div>
+            <div>
+              <Icon size={20} type="chevron" color={_txt}></Icon>
             </div>
           </Block>
         </PageBlock>
@@ -139,7 +146,31 @@ export default function Render() {
 }
 
 
+const ImageBlock = (props) => {
+  const {
+    src,
+    fit = 'cover',
+    width = "100%",
+    height = "100%" } = props
 
+  return (
+    <>
+      <div />
+      <style jsx>{`
+      div{
+        background-image: url(${src});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:${fit};
+        height: ${width};
+        width: ${height};
+        overflow: hidden;
+        border-radius: ${props.rc || 0}px;
+      }
+    `}</style>
+    </>
+  )
+}
 
 const PageBlock = ({ dark = true, ...props }) => {
   return (
