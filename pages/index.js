@@ -48,20 +48,19 @@ export default function Render() {
     <div>
 
       <PageBlock dark={isDark}>
-        <Block grid={vsmall ? "1fr" : "1fr 1fr"} np nc nm >
-          <Block nc c m={[0, 0, 10, 0]}>
-            <ProfileImage size={vsmall ? 170 : 200} src={bioPic} />
+        <Block grid={vsmall ? "1fr" : "auto 1fr"} np nc nm >
+          <Block nc c >
+            <ProfileImage size={180} src={bioPic} />
           </Block>
 
-          <div style={{ padding: vsmall ? 0 : 0 }}>
+          <TextBlock size={18}  >
+            <h2>Hello, I'm Josh</h2>
             <p>
-              Hello, I'm Josh. I'm a front-end developer in Portland OR. I'm seeking full-time remote work (on-site locally). If you need asisstance with visual design and javascript programming I can help.
-      <a href={linkedIn}>
-                You can reach me via LinkedIn.
-      </a>
+              I'm a front-end developer in Portland. If you need asisstance with UI design and React development I can help.
             </p>
+            <p>By way of introduction I've made the code for this site available on <a href={github}>Github.</a> Have a look and and get in touch via <a href={linkedIn}>LinkedIn</a> if I can help in any way.</p>
 
-            <p>By way of introduction I have made the code for <a href={github}>this site is available on Github.</a> Have a look and and get in touch if I can help in any way.</p></div>
+          </TextBlock>
         </Block>
 
       </PageBlock>
@@ -150,6 +149,29 @@ export default function Render() {
       `}</style>
     </div>
   );
+}
+
+const TextBlock = (props) => {
+
+  const { size = 14, unit = 'px' } = props;
+
+  return (
+    <>
+      <div className="root">{props.children}</div>
+      <style jsx>{`
+      .root > :global(p){
+        font-size: ${size}${unit};
+        line-height: 1.4;
+        margin-top:0;
+        margin-bottom: ${size}${unit} !important;
+      }
+      .root > :global(h2){
+        font-size: ${size * 1.3}${unit};
+        margin-bottom: ${size * .4}${unit};
+      }
+    `}</style>
+    </>
+  )
 }
 
 
