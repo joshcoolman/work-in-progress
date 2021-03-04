@@ -48,19 +48,21 @@ export default function Render() {
     <div>
 
       <PageBlock dark={isDark}>
-        <Block nc c m={[0, 0, 10, 0]}>
-          <ProfileImage size={170} src={bioPic} />
+        <Block grid={vsmall ? "1fr" : "1fr 1fr"} np nc nm >
+          <Block nc c m={[0, 0, 10, 0]}>
+            <ProfileImage size={vsmall ? 170 : 200} src={bioPic} />
+          </Block>
+
+          <div style={{ padding: vsmall ? 0 : 0 }}>
+            <p>
+              Hello, I'm Josh. I'm a front-end developer in Portland OR. I'm seeking full-time remote work (on-site locally). If you need asisstance with visual design and javascript programming I can help.
+      <a href={linkedIn}>
+                You can reach me via LinkedIn.
+      </a>
+            </p>
+
+            <p>By way of introduction I have made the code for <a href={github}>this site is available on Github.</a> Have a look and and get in touch if I can help in any way.</p></div>
         </Block>
-
-        <div>
-          <p>
-            Hello, I'm Josh. I'm a front-end developer in Portland OR. I'm seeking full-time remote work (on-site locally). If you need asisstance with visual design and javascript programming I can help.
-          <a href={linkedIn}>
-              You can reach me via LinkedIn.
-          </a>
-          </p>
-
-          <p>By way of introduction I have made the code for <a href={github}>this site is available on Github.</a> Have a look and and get in touch if I can help in any way.</p></div>
 
       </PageBlock>
 
