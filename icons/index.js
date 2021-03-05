@@ -84,7 +84,8 @@ const Icon = props => {
         up,
         btn,
         down,
-        onClick
+        onClick,
+        alpha
     } = props
 
     const Icomponent = icons[type] || icons['bolt'];
@@ -111,6 +112,7 @@ const Icon = props => {
             width: size,
             height: size,
             transform: `rotate(${rotation}deg)`,
+            opacity: alpha ? alpha : 1
         },
         wrap: {
             overflow: 'hidden',
@@ -122,7 +124,8 @@ const Icon = props => {
             alignItems: 'center',
             borderRadius: '50%',
             background: bg ? bg : 'transparent',
-            border: `5px solid ${bg ? bg : 'transparent'}`
+            border: `5px solid ${bg ? bg : 'transparent'}`,
+            opacity: alpha ? alpha : 1
         }
 
     }

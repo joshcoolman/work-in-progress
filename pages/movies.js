@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import axios from "axios";
 import { AnimatePresence } from "framer-motion"
 import {
@@ -12,14 +13,22 @@ import Details from "../components/movies/Details"
 import Posters from "../components/movies/Posters";
 import useHistory from "../hooks/useHistory"
 import Block from "../components/ui/Block"
+import { Icon } from "../icons"
+import { _var, _darken, _alpha } from "../helpers/colors"
 
 export default function Render({ data: { results: items = [], ...rest } }) {
+    const router = useRouter();
     const [movie, setMovie] = useState(() => { })
     const [actor, setActor] = useState(() => { })
     const [loading, setLoading] = useState(false)
-    const [historyCurrent, historyAdd] = useHistory("id");
+    const [historyCurrent, historyAdd, clearHistory] = useHistory("id");
+    const [colors, setColors] = useState({ bg: null, text: null });
 
     useEffect(() => {
+        setColors({
+            bg: _darken(_var('--body-bg')),
+            text: _var('--body-text')
+        })
         toTop();
     }, [])
 
@@ -40,6 +49,8 @@ export default function Render({ data: { results: items = [], ...rest } }) {
         }
 
     }, [historyCurrent])
+
+
 
 
     useEffect(() => {
@@ -91,6 +102,12 @@ export default function Render({ data: { results: items = [], ...rest } }) {
         getMovie(id);
     }
 
+    const clearStack = () => {
+        setActor(null);
+        setMovie(null);
+        clearHistory();
+    }
+
 
 
 
@@ -98,9 +115,28 @@ export default function Render({ data: { results: items = [], ...rest } }) {
 
     return (
         <div>
-            <Block c>
-                <h1 style={{ color: 'var(--body-hdr)' }}>Movies App</h1>
-            </Block>
+
+            {colors && colors.bg && (
+
+                <Block
+                    c
+                    grid="auto 1fr auto"
+                    p={10}
+                    m={[-20, -10, 20, -10]}
+                    bg={colors.bg}
+                >
+
+                    <div style={{ opacity: movie || actor ? 1 : 0 }}>
+                        <Icon type="arrow" onClick={() => { window.history.back() }} color={colors.text} size={20} />
+                    </div>
+                    <h1 style={{ opacity: 0.7 }}>Now Playing</h1>
+                    <div style={{ opacity: movie || actor ? 1 : 0 }}>
+                        <Icon type="close" color={colors.text} alpha={0.5} size={20} onClick={() => clearStack()} />
+                    </div>
+                </Block>
+
+            )}
+
             <div style={{ ...loaderStyle, opacity: loading ? 1 : 0 }}>
                 <Loading />
             </div>
@@ -110,6 +146,13 @@ export default function Render({ data: { results: items = [], ...rest } }) {
                 {actor && <Actor data={actor} onClick={onActor} />}
                 {!actor && !movie && <Posters onClick={getMovie} data={items} />}
             </AnimatePresence>
+            <style jsx>{`
+                h1{
+                    text-transform: uppercase;
+                    font-size: 1.5rem;
+                    letter-spacing: 5px;
+                    color: var(--body-text)
+            `}</style>
         </div>
     )
 }

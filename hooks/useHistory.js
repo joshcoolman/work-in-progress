@@ -31,13 +31,19 @@ const useHistory = (key = "id", path = "movies") => {
         if (prev) {
             setCurrent(prev)
         } else {
-            setCurrent(null)
-            router.push(`/${path}`, undefined, { shallow: true })
+            clearHistory();
         }
     }
 
+    const clearHistory = () => {
+        setCurrent(null)
+        history.current = new Array;
+        router.push(`/${path}`, undefined, { shallow: true })
+    }
 
-    return [current, addItem];
+
+
+    return [current, addItem, clearHistory];
 }
 
 export const RouterBack = (props) => {
