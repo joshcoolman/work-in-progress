@@ -126,7 +126,7 @@ export default function Render({ data: { results: items = [], ...rest } }) {
                     bg={colors.bg}
                 >
 
-                    <div style={{ opacity: movie || actor ? 1 : 0 }}>
+                    <div style={{ opacity: movie || actor ? 1 : 1 }}>
                         <Icon type="arrow" onClick={() => { window.history.back() }} color={colors.text} size={20} />
                     </div>
                     <h1 style={{ opacity: 0.7 }}>Now Playing</h1>
