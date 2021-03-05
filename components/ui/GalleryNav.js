@@ -45,7 +45,7 @@ const SlideControls = ({ items, pos, onClick, height, mobile = false, ...props }
         </div>
     ) : (
             <div style={styles.flexButtons}>
-                <div style={{ ...styles.navIcon, ...bump(-8) }}>
+                <div style={{ ...styles.navIcon, ...bump(-8), opacity: pos }}>
                     <Icon type="chevron" size={30} flip onClick={handlePrev} bg={props.bg || '#222'} />
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
