@@ -56,13 +56,11 @@ export default function Render() {
           <TextBlock size={18}  >
             <h2>Hello, I'm Josh</h2>
             <p>
-              I'm a front-end developer in Portland. If you need asisstance with UI design and React development I can help.
+              I'm a front-end developer in Portland. If you need assistance with UI design and React development I can help.
             </p>
-            <p>By way of introduction I've made the code for this site available on <a href={github}>Github.</a> Have a look and and get in touch via <a href={linkedIn}>LinkedIn</a> if I can help in any way.</p>
-
+            <p>By way of introduction I've made the code for this site available on <a href={github}>Github</a>. Have a look and and get in touch via <a href={linkedIn}>LinkedIn</a> if I can help in any way.</p>
           </TextBlock>
         </Block>
-
       </PageBlock>
 
 
@@ -114,7 +112,7 @@ export default function Render() {
       <PageBlock dark={isDark} p={[10, 0, 10, 0]}>
         <Block nc np >
           <h2> Gallery Component</h2>
-          <p>Simple gallery component using the Unsplash API. Layout out switcher, swipable gallery mode, and search component.</p>
+          <p>Simple gallery component using the Unsplash API. Layout switcher, swipable gallery mode, and search component.</p>
         </Block>
         <GalleryUnsplash />
 
