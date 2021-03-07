@@ -40,6 +40,12 @@
     --input-bg: var(--trueGray-400);
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body,
 html {
     margin: 0;
@@ -132,4 +138,40 @@ body.size-lg div.grid-responsive {
 
 body.size-xl div.grid-responsive {
     grid-template-columns: repeat(5, minmax(0px, 1fr)) !important;
+}
+
+div.layout-profile {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    p {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+    div:last-child {
+        margin-bottom: 10px;
+    }
+    .round {
+        margin: 0 0 10px 0;
+    }
+}
+
+@media (min-width: 510px) {
+    div.layout-profile {
+        grid-template-columns: auto 1fr;
+        margin: 10px;
+        p {
+            font-size: 1.8rem;
+            padding: 0 0 0 10px;
+        }
+        div:last-child {
+            margin-bottom: 0px;
+        }
+        .round {
+            margin: 0 0 0 0;
+        }
+    }
 }

@@ -53,19 +53,17 @@ export default function Render() {
     <div>
 
       <PageBlock dark={isDark}>
-        <Block grid={vsmall ? "1fr" : "auto 1fr"} np nc nm >
-          <Block nc c >
+        <div className="layout-profile" >
+          <div className="flex-center">
             <ProfileImage size={180} src={bioPic} />
-          </Block>
-
-          <TextBlock size={18}  >
-            <h2>Hello, I'm Josh</h2>
+          </div>
+          <div>
             <p>
-              I'm a front-end developer in Portland. If you need assistance with UI design and React development I can help.
-            </p>
+              <span style={{ color: 'var(--body-hdr)' }}>Hello, I'm Josh.</span> I'm a front-end developer in Portland. If you need assistance with UI design and React development I can help.
+          </p>
             <p>By way of introduction I've made the code for this site available on <a href={github}>Github</a>. Have a look and and get in touch via <a href={linkedIn}>LinkedIn</a> if I can help in any way.</p>
-          </TextBlock>
-        </Block>
+          </div>
+        </div>
       </PageBlock>
 
 

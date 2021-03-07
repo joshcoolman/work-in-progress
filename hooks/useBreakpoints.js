@@ -4,7 +4,7 @@ const useBreakpoints = (opts) => {
     const [breakPoint, setBreakPoint] = useState('sm');
     const size = useWindowWidth();
     const breakPoints = {
-        sm: opts && opts.sm || 375,
+        sm: opts && opts.sm || 501,
         md: opts && opts.md || 700,
         lg: opts && opts.lg || 900,
     }
