@@ -114,39 +114,41 @@ export default function Render({ data: { results: items = [], ...rest } }) {
 
 
     return (
-        <div>
+        <div className="wrapper">
 
-            {colors && colors.bg && (
 
-                <Block
-                    c
-                    grid="auto 1fr auto"
-                    p={10}
-                    m={[-20, -10, 20, -10]}
-                    bg={colors.bg}
-                >
 
-                    <div style={{ opacity: movie || actor ? 1 : 1 }}>
-                        <Icon type="arrow" onClick={() => { window.history.back() }} color={colors.text} size={20} />
-                    </div>
-                    <h1 style={{ opacity: 0.7 }}>Now Playing</h1>
-                    <div style={{ opacity: movie || actor ? 1 : 0 }}>
-                        <Icon type="close" color={colors.text} alpha={0.5} size={20} onClick={() => clearStack()} />
-                    </div>
-                </Block>
+            <Block
+                c
+                grid="auto 1fr auto"
+                p={10}
+                m={[-20, -10, 20, -10]}
+                bg={colors.bg}
+            >
 
-            )}
+                <div style={{ opacity: movie || actor ? 1 : 1 }}>
+                    <Icon type="arrow" onClick={() => { window.history.back() }} color={colors.text} size={20} />
+                </div>
+                <h1 style={{ opacity: 0.7 }}>Now Playing</h1>
+                <div style={{ opacity: movie || actor ? 1 : 0 }}>
+                    <Icon type="close" color={colors.text} alpha={0.5} size={20} onClick={() => clearStack()} />
+                </div>
+            </Block>
+
+
 
             <div style={{ ...loaderStyle, opacity: loading ? 1 : 0 }}>
                 <Loading />
             </div>
-
             <AnimatePresence>
                 {!actor && movie && <Details data={movie} onClick={onDetail} />}
                 {actor && <Actor data={actor} onClick={onActor} />}
                 {!actor && !movie && <Posters onClick={getMovie} data={items} />}
             </AnimatePresence>
             <style jsx>{`
+                .wrapper{
+                    min-height: 100vh;
+                }
                 h1{
                     text-transform: uppercase;
                     font-size: 1.5rem;
