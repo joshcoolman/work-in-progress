@@ -9,8 +9,8 @@ import GenerateName from '../components/widget/Name'
 import GalleryUnsplash from "../components/widget/Unsplash"
 import ProfileImage from "../components/ui/ProfileImage"
 import Tappable from "../components/animated/Tappable"
-
-
+import CardLayouts from "../components/examples/CardLayouts"
+import GridLayouts from "../components/examples/GridLayouts"
 
 
 const bioPic = 'https://firebasestorage.googleapis.com/v0/b/images-aae96.appspot.com/o/jc_profile.jpg?alt=media&token=aab14065-dc7a-4624-80b9-361b8d2c6224';
@@ -118,7 +118,24 @@ export default function Render() {
           <p>Simple gallery component using the Unsplash API. Layout switcher, swipable gallery mode, and search component.</p>
         </Block>
         <GalleryUnsplash />
+      </PageBlock>
 
+
+      <PageBlock dark={isDark}>
+        <Block nc np m={[5, 5, 15, 5]} >
+          <h2>Card Layout Components:</h2>
+          <p>Card components using unsplash api to generate backgrounds. Code on Github is a bit more interesting.</p>
+        </Block>
+        <CardLayouts />
+      </PageBlock>
+
+      <PageBlock dark={isDark}>
+        <Block nc np m={[5, 5, 15, 5]} >
+          <h2>Responsive Grid Layout</h2>
+          <p>Mixing up Grid with Card components with column and row span props for different layouts on different screen sizes (compare with desktop layout to see the differences).</p>
+          <p>Filler component used to generate the silly titles and dummy text. Useful for developing layout components</p>
+        </Block>
+        <GridLayouts />
       </PageBlock>
 
       <PageBlock dark={isDark}  >
@@ -150,29 +167,6 @@ export default function Render() {
       `}</style>
     </div>
   );
-}
-
-const TextBlock = (props) => {
-
-  const { size = 14, unit = 'px' } = props;
-
-  return (
-    <>
-      <div className="root">{props.children}</div>
-      <style jsx>{`
-      .root > :global(p){
-        font-size: ${size}${unit};
-        line-height: 1.4;
-        margin-top:0;
-        margin-bottom: ${size}${unit} !important;
-      }
-      .root > :global(h2){
-        font-size: ${size * 1.3}${unit};
-        margin-bottom: ${size * .4}${unit};
-      }
-    `}</style>
-    </>
-  )
 }
 
 

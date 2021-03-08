@@ -21,6 +21,7 @@
         "hex-alpha": "^1.0.3",
         "immer": "^8.0.1",
         "invert-color": "^2.0.0",
+        "jabber": "^1.2.2",
         "lodash": "^4.17.20",
         "next": "10.0.4",
         "postcss": "^8.2.4",

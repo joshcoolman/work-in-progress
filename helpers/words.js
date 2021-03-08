@@ -11,13 +11,15 @@ export const randomString = (length = 5) => {
 }
 
 
-export const getName = () => {
+export const getName = (upper = true, char = "-") => {
     let arr = shuffle(words);
     let first = arr[Math.floor(Math.random() * arr.length)];
     let last = arr[Math.floor(Math.random() * arr.length)];
-    let fullName = `${first}-${last}`;
-    return fullName.toUpperCase();
+    let fullName = `${first}${char}${last}`;
+    return !upper ? fullName : fullName.toUpperCase();
 };
+
+
 
 
 export const words = [

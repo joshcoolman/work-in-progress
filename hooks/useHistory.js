@@ -12,7 +12,6 @@ const useHistory = (key = "id", path = "movies") => {
                 removeItem();
                 return false
             }
-            console.log(url, as, options, history)
             router.push("/")
         })
     }, [router])

@@ -3,6 +3,7 @@ import '@styles/globals.scss'
 import '@styles/materialColors.css'
 import ThemeContext from "../helpers/ThemeContext"
 import Block from "../components/ui/Block"
+import Layout from "../components/ui/Layout"
 import useBreakpoints from "../hooks/useBreakpoints"
 
 const Responsive = ({ onChange }) => {
@@ -22,14 +23,23 @@ function Application({ Component, pageProps }) {
     document.body.setAttribute("data-theme", theme);
   }, [theme])
 
+  const dev = false;
+
+  if (dev) {
+    return (
+      <ThemeContext.Provider value={{ theme, setTheme, viewSize }}>
+        <Responsive onChange={size => setViewSize(size)} />
+        <Component {...pageProps} />
+      </ThemeContext.Provider>
+    )
+  }
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme, viewSize }}>
       <Responsive onChange={size => setViewSize(size)} />
-      <Block nm p={[20, 0, 20, 0]} grid="1fr minmax(0, 650px) 1fr">
-        <div />
+      <Layout width={650} bg={'transparent'}>
         <Component {...pageProps} />
-        <div />
-      </Block>
+      </Layout>
     </ThemeContext.Provider>
   )
 }
