@@ -1,3 +1,4 @@
+import tech_words from "./words_startup"
 import { shuffle } from "lodash";
 
 export const randomString = (length = 5) => {
@@ -10,13 +11,30 @@ export const randomString = (length = 5) => {
     return str.toUpperCase();
 }
 
+const cap = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+}
 
-export const getName = (upper = true, char = "-") => {
+const randomItem = (arr) => {
+    return arr[Math.floor(Math.random() * arr.length)]
+}
+
+
+export const getName = (upper = true, char = "-", tech = false) => {
     let arr = shuffle(words);
-    let first = arr[Math.floor(Math.random() * arr.length)];
-    let last = arr[Math.floor(Math.random() * arr.length)];
+    let first = randomItem(arr);
+    let last = randomItem(arr);
     let fullName = `${first}${char}${last}`;
     return !upper ? fullName : fullName.toUpperCase();
+};
+
+export const getTitle = (char = " ") => {
+    let arr = shuffle(tech_words);
+    let first = cap(randomItem(arr));
+    let last = cap(randomItem(arr));
+    let title = `${first}${char}${last}`;
+    return title;
 };
 
 

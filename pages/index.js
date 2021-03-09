@@ -13,6 +13,8 @@ import CardLayouts from "../components/examples/CardLayouts"
 import GridLayouts from "../components/examples/GridLayouts"
 
 
+
+
 const bioPic = 'https://firebasestorage.googleapis.com/v0/b/images-aae96.appspot.com/o/jc_profile.jpg?alt=media&token=aab14065-dc7a-4624-80b9-361b8d2c6224';
 const linkedIn = 'https://www.linkedin.com/in/joshuacoolman/';
 const github = 'https://github.com/joshcoolman/work-in-progress';
@@ -21,6 +23,9 @@ const github = 'https://github.com/joshcoolman/work-in-progress';
 
 
 export default function Render() {
+
+
+
   const { theme, viewSize } = useContext(ThemeContext)
   const [isDark, setIsDark] = useState(true);
   const [vsmall, setVsmall] = useState(true);
