@@ -5,8 +5,8 @@ const Layout = (props) => {
         bg = 'black',
         color = 'inherit',
         width = 650,
-        mt = 30,
-        mb = 30
+        mt = 0,
+        mb = 0
     } = props;
     return (
         <Fragment>

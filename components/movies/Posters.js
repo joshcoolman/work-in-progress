@@ -4,8 +4,10 @@ import { rando } from "../../helpers/utils"
 import GridResponsive from "../ui/GridResponsive";
 
 
+
 export default function MoviePosters({ data = [], onClick }) {
     return (
+
         <GridResponsive>
             {data.map((poster, i) => (
                 <img

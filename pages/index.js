@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react"
+import { useContext, useState, useEffect, Fragment } from "react"
 import { IconMap, Icon } from "../icons"
 import ThemeContext from '../helpers/ThemeContext'
 import RatingExample from "../components/widget/Rating"
@@ -52,7 +52,7 @@ export default function Render() {
   return (
     <div>
 
-      <PageBlock dark={isDark}>
+      <PageBlock dark={isDark} >
         <div className="layout-profile" >
           <div className="flex-center">
             <ProfileImage size={180} src={bioPic} />
@@ -178,7 +178,7 @@ const ImageBlock = (props) => {
     height = "100%" } = props
 
   return (
-    <>
+    <Fragment>
       <div />
       <style jsx>{`
       div{
@@ -192,13 +192,13 @@ const ImageBlock = (props) => {
         border-radius: ${props.rc || 0}px;
       }
     `}</style>
-    </>
+    </Fragment>
   )
 }
 
 const PageBlock = ({ dark = true, ...props }) => {
   return (
-    <Block bg={dark ? "#1B263E" : "#eee"} p={10} m={[0, 5, 20, 5]}  {...props} >
+    <Block bg={dark ? "#1B263E" : "#eee"} p={10} m={[5, 5, 15, 5]}  {...props} >
       {props.children}
     </Block>
   )

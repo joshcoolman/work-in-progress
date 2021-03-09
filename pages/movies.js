@@ -15,6 +15,7 @@ import useHistory from "../hooks/useHistory"
 import Block from "../components/ui/Block"
 import { Icon } from "../icons"
 import { _var, _darken, _alpha } from "../helpers/colors"
+import Card from "../components/ui/Card"
 
 export default function Render({ data: { results: items = [], ...rest } }) {
     const router = useRouter();
@@ -122,7 +123,7 @@ export default function Render({ data: { results: items = [], ...rest } }) {
                 c
                 grid="auto 1fr auto"
                 p={10}
-                m={[-20, -10, 20, -10]}
+                m={[0, 0, 0, 0]}
                 bg={colors.bg}
             >
 
@@ -140,10 +141,15 @@ export default function Render({ data: { results: items = [], ...rest } }) {
             <div style={{ ...loaderStyle, opacity: loading ? 1 : 0 }}>
                 <Loading />
             </div>
+
             <AnimatePresence>
                 {!actor && movie && <Details data={movie} onClick={onDetail} />}
                 {actor && <Actor data={actor} onClick={onActor} />}
-                {!actor && !movie && <Posters onClick={getMovie} data={items} />}
+                {!actor && !movie && (
+                    <Card m={0} nc>
+                        <Posters m={10} onClick={getMovie} data={items} />
+                    </Card>
+                )}
             </AnimatePresence>
             <style jsx>{`
                 .wrapper{
