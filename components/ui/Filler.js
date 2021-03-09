@@ -1,9 +1,5 @@
 import { Fragment, useEffect, useState } from 'react'
-import Jabber from 'jabber'
-import { getName, getTitle } from "../../helpers/words"
-import seed from "../../helpers/words_startup"
-
-const jabber = new Jabber(seed, 1);
+import { getTitle, getParagraph } from "../../helpers/words"
 
 const Filler = (props) => {
 
@@ -14,37 +10,22 @@ const Filler = (props) => {
         count = 1,          // paragraph count 
         words = 30,         // words per paragraph
         fun = false,        // real word goofy titles 
-        tech = false,       // real word tech combos
         hdr,                // Text to use for Titles
         txt                 // Text to use instead of paragraph
     } = props;
 
-
-    const _word = (amt = 5, cap = true) => {
-        return jabber.createWord(amt, cap)
-    }
-
     const _title = () => {
-
         if (hdr) {
             return hdr
         }
-
-        if (tech) {
-            return getTitle();
-        }
-
-        if (fun) {
-            return getName(false, " ",)
-        }
-        return `${_word()} ${_word()}`
+        return getTitle();
     }
 
     const _paragraph = () => {
         if (txt) {
             return txt
         }
-        return jabber.createParagraph(words);
+        return getParagraph(words);
     }
 
     useEffect(() => {

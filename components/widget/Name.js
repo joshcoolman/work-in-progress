@@ -1,4 +1,4 @@
-import { getName, randomString } from "../../helpers/words"
+import { randomString, getTitle } from "../../helpers/words"
 import { useEffect, useRef } from "react";
 import { animate } from 'framer-motion'
 import { shuffle } from "lodash"
@@ -27,7 +27,7 @@ const initText = text => {
 
 
 const GenerateName = (props) => {
-    const [name, setName] = useState(getName);
+    const [name, setName] = useState();
     const [nameList, setNameList] = useState([]);
     const nodeRef = useRef();
     const { color = 'teal', bg } = props;
@@ -38,7 +38,7 @@ const GenerateName = (props) => {
     }
 
     useEffect(() => {
-        setName(getName())
+        setName(getTitle("-", true).toUpperCase())
     }, [])
 
     useEffect(() => {
@@ -66,7 +66,7 @@ const GenerateName = (props) => {
     }, [nameList])
 
     const handleClick = () => {
-        setName(getName());
+        setName(getTitle("-", true).toUpperCase());
     }
 
     return (
@@ -76,19 +76,11 @@ const GenerateName = (props) => {
                 <h1 ref={nodeRef} />
             </Block>
             <style jsx>{`
-          p{
-            color:${theme.text};
-            font-size: 1.5rem;
-            line-height: 1.8rem;
-            padding: 5px 0;
-            text-align: center;
-
-          }
-          h1{
-            color:${theme.heading};
-            font-size: 3rem;
-            font-family: "B612 Mono", monospace;
-          }
+            h1{
+                color:${theme.heading};
+                font-size: 2.5rem;
+                font-family: "B612 Mono", monospace;
+            }
           `}</style>
         </Tappable>
     );
