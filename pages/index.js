@@ -58,7 +58,6 @@ export default function Render() {
     <div>
 
       <PageBlock dark={isDark} >
-        <h1>STAGING TEST</h1>
         <div className="layout-profile" >
           <div className="flex-center">
             <ProfileImage size={180} src={bioPic} />
