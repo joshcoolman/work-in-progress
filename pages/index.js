@@ -34,6 +34,8 @@ export default function Render() {
   const _txt = isDark ? '#b8c1d4' : "#1B263E";
   const _hdr = isDark ? 'tomato' : "green";
 
+  //this comment is wack
+
 
   useEffect(() => {
     if (theme) {
