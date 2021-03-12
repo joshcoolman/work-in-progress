@@ -39,6 +39,11 @@
     --button-text: var(--cyan-50);
     --button-bg: var(--cyan-600);
     --input-bg: var(--trueGray-400);
+    transition: background-color 1s ease;
+}
+
+[data-theme="dark"] {
+    transition: background-color 1s ease;
 }
 
 .flex-center {
@@ -57,7 +62,6 @@ html {
     font-weight: var(--weight);
     color: var(--body-text);
     background-color: var(--body-bg);
-    transition: background-color 1s ease;
     -webkit-text-size-adjust: 100%;
 }
 
