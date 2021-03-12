@@ -154,7 +154,7 @@ export default function Render() {
       <PageBlock dark={isDark} >
         <Block nc np m={5} >
           <h2>SVG Icon Key</h2>
-          <p>SVG Icons used for many of the ui elements above. This component spits out names and Icons for reference when developing components.</p>
+          <p>SVG Icons used for many of the ui elements above. This component spits out names and Icons for easy reference when developing components.</p>
         </Block>
         <IconMap color={_txt} />
 

@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import '@styles/globals.scss'
 import '@styles/materialColors.css'
 import ThemeContext from "../helpers/ThemeContext"
-import Block from "../components/ui/Block"
 import Layout from "../components/ui/Layout"
 import useBreakpoints from "../hooks/useBreakpoints"
 
@@ -18,8 +17,13 @@ const Responsive = ({ onChange }) => {
 function Application({ Component, pageProps }) {
   const [theme, setTheme] = useState('dark')
   const [viewSize, setViewSize] = useState(0);
+  const firstUpdate = useRef(true);
 
   useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
     document.body.setAttribute("data-theme", theme);
   }, [theme])
 
