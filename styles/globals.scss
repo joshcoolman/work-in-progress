@@ -14,7 +14,8 @@
     --weight: 400;
 }
 
-[data-theme="dark"] {
+:root {
+    // dark theme
     --body-link: var(--cyan-200);
     --body-text: var(--coolGray-400);
     --body-bg: var(--coolGray-900);
@@ -26,6 +27,8 @@
     --button-bg: var(--coolGray-700);
     --input-bg: var(--trueGray-900);
 }
+
+[data-theme="dark"] {}
 
 [data-theme="light"] {
     --body-link: var(--blue-600);
